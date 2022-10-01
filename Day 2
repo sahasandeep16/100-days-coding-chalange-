@@ -1,0 +1,73 @@
+import java.util.Scanner;
+public class UsernamePassword {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter Username: ");
+        String usr = in.nextLine();
+        System.out.print("Enter Password: ");
+        String psd = in.nextLine();
+        if( usr.length()>=6 && usr.length()<=15)
+        {
+          if(usr.charAt(0)<=90)
+          {
+              if(psd.length()>8 && psd.length()<256)
+              {
+                  int counter=0,counter1=0;
+                    for(int i=0;i<usr.length();i++)
+                    {
+                        char ch=usr.charAt(i);
+                        String c= String.valueOf(ch);
+                        if(
+                                c.equals("(")==true || c.equals(")")==true  ||
+                                c.equals("{")==true || c.equals("}")==true
+                                || c.equals("[")==true || c.equals("]")==true
+                                ||c.equals(" ")==true
+                        )
+                        {
+                            counter=1;
+                        }
+                    }
+                  for(int i=0;i<psd.length();i++)
+                  {
+                      char ch=psd.charAt(i);
+                      String c= String.valueOf(ch);
+                      if(
+                              c.equals("(")==true || c.equals(")")==true  ||
+                                      c.equals("{")==true || c.equals("}")==true
+                                      || c.equals("[")==true || c.equals("]")==true
+                                      ||c.equals(" ")==true
+                      )
+                      {
+                          counter1=1;
+                      }
+                  }
+                    if(counter==0 && counter1==0)
+                    {
+                            if(usr.equals(psd))
+                            {
+                                System.out.println("Error: password cannot contain or be the same as its associated username");
+                            }
+                            else
+                            {
+                                System.out.println("Sucessful");
+                            }
+                    }
+                    else {
+                        System.out.println("Error: parentheses or whitespaces are not valid username or password");
+                    }
+              }
+              else {
+                  System.out.println("Error: Password must not be shorter than 8 characters but must not exceed 256");
+              }
+          }
+          else
+          {
+              System.out.println("Error: Username start with uppercase A-Z ");
+          }
+        }
+        else {
+            System.out.println("Error: Username Length should be between 6-15 characters");
+        }
+
+    }
+}
