@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class SLimit {
+	public static void main (String [] args ) {
+		System.out.println("Please Enter the String ");
+		
+		Scanner in = new Scanner (System.in);
+		
+		String enter = in.nextLine();
+		if (enter.length() > 6 && enter.length() < 10 ) {
+			System.out.println("Tis is a valid String = "+enter);
+		}
+			else {
+				System.out.println("Invalid String ");
+			}
+		
+	}
+
+}
