@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Array {
+public static void main (String args []) {
+	 Linear w  = new  Linear();
+	 w.trylinear();
+
+}
+}
+
+class Linear {
+	public static void trylinear() {
+		
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Give array size for linear:");
+		int li =in.nextInt();// take size of array 
+		int a [] = new int [li];
+		int i;
+		// define array memory
+		System.out.println("Initialize memory of array:");
+		for (i = 0; i<li; i++) {
+			a[i] = in.nextInt();
+		}
+		
+		System.out.println("find index of any given memeory:");
+		int x = in.nextInt();// input for x
+		
+		// it will show output 
+		
+		for ( i = 0; i<li; i++) {
+			
+			if(a[i] == x) {
+				
+				System.out.println("x found at  :" +i);
+			}
+		}
+	
+}				// method trylinear ends 
+}				// class Linear ends .
