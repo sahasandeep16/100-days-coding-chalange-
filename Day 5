@@ -1,0 +1,40 @@
+import java.util.Scanner; 
+public class Barray {
+public static void main(String args[])
+{
+	
+	Scanner in = new Scanner(System.in);
+	System.out.println("Give array size for linear:");
+	int a =in.nextInt();// take size of array 
+	int b [] = new int [a];// converting array size into array 
+	int first;
+	int last ;
+	int mid;
+	int i;
+System.out.println("Enter array size ");//Taking the element to search  
+for (i = 0; i<a; i++) 
+	b[i] = in.nextInt(); 
+System.out.println("Enter element you want to  search ");
+int c = in.nextInt();
+first = 0;
+last = a-1;
+mid = (first    + last)/2; // applying the formula
+while (first <= last) {
+	if (b [mid]<c)
+		first  = mid +1;
+	
+	else if (b [mid]==c) {
+		int h = mid + 1 ;
+	System.out.println("Found the binary search element "+c+   " at the index number :"+ (h ));
+	
+	break;
+	}
+	else {
+		last = mid +1;
+	}
+	mid = (first + last )/2;
+}
+	if (first > last )// if element will not be found 
+System.out.println (c+"is not found . Hence the entred numberm is not in Binary form ");		   
+}// method ends 
+}// class ends 
