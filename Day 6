@@ -1,4 +1,9 @@
 // Using Switch case to access methods and also using switch in two methods .
+/*if Choice = A output = week 
+if week choice = 2 output = Monday */
+/* if choice = B output = Months
+if choice = 7 output = July  */
+
 import java.util.Scanner;
 public class SwitchStat {
 public static void main (String [] args ) {
