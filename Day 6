@@ -1,0 +1,100 @@
+// Using Switch case to access methods and also using switch in two methods .
+import java.util.Scanner;
+public class SwitchStat {
+public static void main (String [] args ) {
+	Switchit r = new Switchit ();
+	System.out.println(" Type A for Week and B for Months  ");
+	Scanner a = new Scanner (System.in);
+	String l = a.nextLine();
+	  switch (l){
+	case "A": 
+		r.week();
+		break;
+	case "B" :
+		r.months();
+	}
+}// main method ends 
+}// main class ends 
+class Switchit{
+	public static void week () {
+		Scanner a = new Scanner (System.in);
+		System.out.println("Enter any week number between 1-7 to get week day  ");
+		int day = a.nextInt() ;
+		if (day < 7 && day >0) {
+		switch (day) {
+		case 1:
+			System.out.println("Sunday  ");
+		break ;
+		case 2:
+			System.out.println("Monday ");
+		break ;
+		case 3:
+			System.out.println("Tuesday ");
+		break ;
+		case 4:
+			System.out.println("Wednesday ");
+		break ;
+		case 5:
+			System.out.println("Thrusday ");
+		break ;
+		case 6:
+			System.out.println(" Friday ");
+		break ;
+		case 7:
+			System.out.println(" Saterday");
+		break ;
+		}
+		}
+		else  {System.out.println("Invalid nuber enterd ");
+		
+		}
+	}// method week ends  
+// class SwitchWeek ends 
+	public static void months() {
+		Scanner a = new Scanner (System.in);
+		System.out.println("Enter any month number between 1-12 to get month name ");
+		int month = a.nextInt() ;
+		if (month < 12 && month >0) {
+		switch (month) {
+		case 1:
+			System.out.println("January   ");
+		break ;
+		case 2:
+			System.out.println("February ");
+		break ;
+		case 3:
+			System.out.println("March ");
+		break ;
+		case 4:
+			System.out.println("April ");
+		break ;
+		case 5:
+			System.out.println("May");
+		break ;
+		case 6:
+			System.out.println(" June");
+		break ;
+		case 7:
+			System.out.println(" July");
+		break ;
+		case 8:
+			System.out.println("August   ");
+		break ;
+		case 9:
+			System.out.println("September  ");
+		break ;
+		case 10:
+			System.out.println("October  ");
+		break ;
+		case 11:
+			System.out.println("November  ");
+		break ;
+		case 12:
+			System.out.println("December ");
+		break ;
+		}
+		}
+		else  {System.out.println("Invalid nuber enterd ");
+		}
+		} // Method months ends
+}// class  SwitchMonths 
