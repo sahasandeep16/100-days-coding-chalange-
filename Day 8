@@ -1,6 +1,6 @@
 /*A program that will read a line and count all occurrences of the word user have selected .
  * Example : I just saw the most popular movie of the year.
- * output : The word the occurrence   was found : 2 times in this Paragraph. 
+ * output : The word the occurrence   was found : 2 times in this Sentence. 
 
 */
 import java.util.Scanner;
