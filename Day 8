@@ -1,0 +1,22 @@
+/*A program that will read a line and count all occurrences of the word user have selected .
+ * Example : I just saw the most popular movie of the year.
+ * output : The word the occurrence   was found : 2 times in this Paragraph. 
+
+*/
+import java.util.Scanner;
+public class ParticularWord {
+public static void main (String [] args) {
+Scanner in = new Scanner (System.in); 
+System.out.println(" Enter a sentences ");
+String enter = in.nextLine();// Taking input Sentence.
+System.out.println(" enter the word you want to find  ");
+String find =in.nextLine( );// Taking input to find the word.
+String t [] = enter.split(" "); 
+	int count = 0;
+	for (int i = 0 ; i< t.length; i++) {//  loop starts
+		if (t[i].equals(find)) {
+		count ++;}
+	}//  loop ends
+System.out.println("The word "+find+" occurrence  was found : "+ count +" times in this Paragraph ");
+}// method ends 
+}// class ends
