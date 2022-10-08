@@ -1,0 +1,31 @@
+//Question : Count all  vowels and consonant of Sentence 
+/* Input from user: He who thinks that the soul kills, and he who thinks of it as killed, are both ignorant. The soul kills not, nor is it killed.
+output:
+Number of vowels: 33
+Number of consonants: 63
+*/
+import java.util.Scanner;
+public class VowelCon{
+  public static void main(String[] args) {    
+       int vCount = 0; 	//Vowels
+       int cCount = 0;   //consonants 
+      Scanner in = new Scanner (System.in);
+      System.out.println("Enter String ");  
+      String e = in.nextLine();//Input for sentence";
+         
+     e = e.toLowerCase(); //Converting entire string to lower case to reduce the comparisons      
+          
+      for(int i = 0; i < e.length(); i++) {  //Checking vowel      
+          if(e.charAt(i) == 'a' || e.charAt(i) == 'e' || e.charAt(i) == 'i' || e.charAt(i) == 'o' || e.charAt(i) == 'u') {    
+              vCount++;      //vowel counting
+          }    
+          //Checking  consonant    
+          else if(e.charAt(i) >= 'a' && e.charAt(i)<='z') {      
+               
+              cCount++; // consonant counter     
+          }    
+      }    
+      System.out.println("Number of vowels: " + vCount);    
+      System.out.println("Number of consonants: " + cCount);    
+  } 
+}
