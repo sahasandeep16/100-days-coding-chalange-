@@ -1,0 +1,19 @@
+//Q1 :Reverse words in a given string
+/*Enter word : lets rock 
+ * Reversed word : kcor stel*/
+
+import java.util.Scanner;
+public class StringCases {
+	public static void main (String []args ) {
+		Scanner in = new Scanner (System.in);
+		System.out.println("Enter word ");
+		String word = in.nextLine();
+		word =  word.trim();
+			String r = " ";
+			char [] ch = word.toCharArray();
+			for (int i = ch.length - 1 ; i >=0; i--) {
+				r += ch[i];
+			}
+			System.out.println("Reversed word :" +  r.trim());
+	}	
+}// class ends 
