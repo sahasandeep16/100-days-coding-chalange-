@@ -1,0 +1,37 @@
+// Question = A program that will read a line and delete from it all occurrences of the selected word .
+/*
+ Enter the Sentence :  The Nile is the longest river.
+Enter the word to delete  
+the
+ Output :  Nile is longest river. 
+ */
+ 
+import java.util.Scanner;
+public class WordRemover {
+	
+	public static void main(String[] args)// main method starts 
+    {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the Sentence ");
+        String estr = in.nextLine();
+		System.out.println("Enter the word to delete  ");
+        String rword = in.nextLine();
+        remove(estr, rword);
+    }// main method ends 
+	
+	    static void remove(String estr, String rword) // sub method 
+	    {
+	    	
+	        String msg [] = estr.split(" ");
+	        String new_str = " ";
+
+	        for (String words : msg) {
+
+	            if (!words.equalsIgnoreCase(rword)) {
+
+	                new_str += words + " ";
+	            }
+	        }
+	        System.out.print(new_str);
+	    } 
+} 
