@@ -1,0 +1,30 @@
+/* Question : Take Sting input from user , Search a substring from the sentence and replace with another word .
+ *  input :
+ *   Enter a sentences 
+Return a new string where one word are replaced with another
+ enter the word you want to find  
+are
+ enter the word you want to find  
+is
+output:
+Return a new string where one word is replaced with another
+
+ */
+import java.util.Scanner;
+public class Repalce {
+	public static void main(String[] args)// main method starts 
+    {
+		Scanner in = new Scanner (System.in); 
+		System.out.println(" Enter a sentences ");
+		String enter = in.nextLine();// Taking input Sentence.
+		System.out.println(" enter the word you want to find  ");
+		String find =in.nextLine( );// Taking input to find the word.
+		System.out.println(" enter the word you want to find  ");
+		String repls =in.nextLine( );// Taking input of replacing  word.
+		String t [] = enter.split(" "); 
+			for (int i = 0 ; i< t.length; i++) {//  loop starts
+				if (t[i].equals(find)) {
+				System.out.println(enter.replace(find,repls));}
+			}	
+}
+}
