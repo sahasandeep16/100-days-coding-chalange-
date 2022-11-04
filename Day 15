@@ -1,0 +1,49 @@
+/*Question :The inner loop selects the minimum element in the unsorted array and places the elements in
+ *  increasing order using Selection Sort.
+ * Input:
+ * Give array size for linear:
+4
+Initialize memory of array: (press enter after each element input)
+1
+4
+9
+8
+output:
+Shorted using Selection Sort 
+1 4 8 9 
+Time complexity: O(N2) */
+import java .util.Scanner;
+public class SelectionSort {
+	public static void printArray(int arr[]) {
+	       for(int i=0; i<arr.length; i++) {
+	           System.out.print(arr[i]+" ");
+	       }
+	       System.out.println();
+	   }
+	   public static void main(String args[]) { 
+		   Scanner in = new Scanner(System.in);
+			System.out.println("Give array size for linear:");
+			int enter =in.nextInt();// take size of array 
+			int arr [] = new int [enter];
+			int k;
+			// define array memory
+			System.out.println("Initialize memory of array: (press enter after each element input)");
+			for (k = 0; k<enter; k++) {
+				arr[k] = in.nextInt();
+			}
+	       //selection sort
+	       for(int i=0; i<arr.length-1; i++) {
+	           int smallest = i;
+	           for(int j=i+1; j<arr.length; j++) {
+	               if(arr[j] < arr[smallest]) {
+	                   smallest = j;
+	               }
+	           }
+	           //swap
+	           int temp = arr[smallest];
+	           arr[smallest] = arr[i];
+	           arr[i] = temp;
+	           }
+	       System.out.println("Shorted using Selection Sort ");
+	       printArray(arr);
+}}
