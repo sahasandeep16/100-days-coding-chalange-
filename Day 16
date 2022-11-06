@@ -1,0 +1,52 @@
+/*Question :  Take an element from the unsorted array, place it in its corresponding position in the sorted part, 
+ * and shift the elements accordingly using Insertion Sort . 
+Input:
+Give array size for linear:
+5
+Initialize memory of array: (press enter after each element input)
+9
+6
+10
+12
+2
+Output:
+Shorted using Insertion Sort 
+2 6 9 10 12 
+Time Complexity: O(N2) 
+*/
+import java.util.Scanner;
+public class InsertionSort {
+		   public static void printArray(int arr[]) {
+		       for(int i=0; i<arr.length; i++) {
+		           System.out.print(arr[i]+" ");
+		       }
+		       System.out.println();
+		   }
+		 
+		   public static void main(String args[]) {
+			   
+			   Scanner in = new Scanner(System.in);
+				System.out.println("Give array size for linear:");
+				int enter =in.nextInt();// take size of array 
+				int arr [] = new int [enter];
+				int k;
+				// define array memory
+				System.out.println("Initialize memory of array: (press enter after each element input)");
+				for (k = 0; k<enter; k++) {
+					arr[k] = in.nextInt();
+				}
+		       //insertion sort
+		       for(int i=1; i<arr.length; i++) {
+		           int current = arr[i];
+		           int j = i - 1;
+		               while(j >= 0 && arr[j] > current) {
+		                   //Keep swapping
+		                   arr[j+1] = arr[j];
+		                   j--;
+		               }
+		           arr[j+1] = current;
+		       }
+		       System.out.println("Shorted using Insertion Sort ");
+		       printArray(arr);
+		   }
+}
