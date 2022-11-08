@@ -1,0 +1,48 @@
+/*Question : Perform these Operation :
+ * Declare an ArrayList of different Types
+ * Add Element
+ * Get Element
+ * Add Element at a specific Index
+ * Set Element at a specific Index
+ * Delete Element from an Index
+ * Size of the List
+ * Loop/Iterate on the List
+ * Sort the List
+*/
+import java.util.ArrayList;
+import java.util.Collections;
+public class ArrayLists {
+	public static void main (String [] args ) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		// add element
+		list.add(0);
+		list.add(2);
+		list.add(3);
+		list.add(5);
+		list.add(7);
+		list.add(8);
+		list.add(10);
+		System.out.println("This is the list :"+ list);
+		// get element
+		int index = list.get(4);
+		System.out.println("The index number is "+index);
+		//Add Element in between 
+		list.add(1,1);
+		System.out.println("The new list is : "+list);
+		// set or modify  element 
+		list.set(0,5);
+		//delete the List
+		list.remove(3);
+		System.out.println("The new list after removal of elemnet "+list);
+		//size
+		int size = list.size();
+		System.out.println("The size is :" + size);
+		// looping 
+		for (int i = 0; i<list.size(); i++ ) {
+			System.out.println(list.get(i));}
+		//Shorting the list 
+				Collections.sort(list);
+			       System.out.println(list);		       
+}
+}
