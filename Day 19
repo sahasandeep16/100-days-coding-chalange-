@@ -1,0 +1,114 @@
+/*Question :
+ * create a Linked List and Perform =>
+ * Adding FistNode 
+ * Adding FistNode 
+ * Delete FistNode 
+ * Delete LastNode
+ * Side of List 
+ * Output:
+ * is->a->Null
+This->is->a->list->Null
+is->a->list->Null
+is->a->Null
+2
+ */
+import java.util.*;
+public class SingleLinkedList {
+	Node head;
+	private int  size ;
+	SingleLinkedList (){
+		this.size=0;
+	}
+	class Node {// node class 
+		String data;
+		Node link;
+		
+	Node(String data ){
+		this.data = data;
+		this.link = null;
+		size ++;
+	}
+	}
+	// add first
+	public void addfirst(String data ) {
+		Node newNode =  new Node (data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+		newNode.link= head;
+		head= newNode;
+		}
+	public void addlast(String data ) {
+		Node newNode =  new Node (data);
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+	Node crntNode = head ;
+	while (crntNode.link != null) {
+		crntNode = crntNode.link;
+		} 
+	crntNode.link = newNode;
+	
+	}
+	// delete first
+	public void deletefirst() {
+		if (head == null ) {
+			System.out.print("This list is empty ");
+			return;
+			}
+		size--;
+		head = head.link;
+	}
+	// delete last 
+	public void deletelast() {
+		if (head == null ) {
+			System.out.print("This list is empty ");
+			return;
+		}
+		size--;
+		if (head.link == null) {
+			head = null;
+			return; }
+		Node Slast = head;
+		Node LNode = head.link;
+		while (LNode.link != null ) {
+			LNode = LNode.link;
+			Slast = Slast.link;
+		}
+		Slast.link = null;	
+	}
+	// size return 
+	public int getsize() {
+		return size;
+	} 
+	//print 
+	public void printlist() {
+		if (head == null ) {
+			System.out.println("List is empty");
+			return;
+			}
+		Node crntNode = head ;
+		while (crntNode!= null) {
+			System.out.print(crntNode.data+ "->");
+			crntNode = crntNode.link;
+			} 
+		System.out.println("Null");	
+		}	
+public static void main (String [] args){
+	SingleLinkedList list = new SingleLinkedList();
+	list.addfirst("a");
+	list.addfirst("is");
+	list.printlist();
+	list.addlast("list");
+	list.addfirst("This");
+	list.printlist();
+	list.deletefirst();
+	list.printlist();
+	list.deletelast();
+	list.printlist();
+	System.out.println("Size of List is : "+list.getsize());
+	
+}
+}
