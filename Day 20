@@ -1,0 +1,48 @@
+/*Question :1) Make a Linked List & add the following elements to it : (1, 5, 7, 3 , 8, 2, 3). 
+*/
+import java.util.*;
+public class HomeLL {
+	public static void main (String [] args){
+	
+		HomeLL list = new HomeLL();
+		list.q1(1);
+		list.q1(5);
+		list.q1(7);
+		list.q1(9);
+		list.q1(8);
+		list.q1(2);
+		list.q1(3);
+		list.plist();
+	}
+
+	Node head ;
+	class Node {
+		Integer data ;
+		Node link ;
+		Node (Integer data){
+			this.data = data ;
+			this .link = null;}
+	 }
+	// adding element
+	public void q1(Integer data) {
+		Node ob = new Node (data);
+		if	(head == null) {
+			head = ob;
+			return;
+		}
+		ob.link = head;
+		head = ob;
+	}
+	//print
+	public void plist() {
+		Node cnode = head ;
+		while (cnode != null)
+		{
+			System.out.print(cnode.data+"->");
+			cnode = cnode.link;}
+		System.out.println("Null");
+		// Listing 
+		
+	}
+	}
+	
