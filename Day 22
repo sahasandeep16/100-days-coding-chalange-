@@ -1,0 +1,68 @@
+/*Question:
+ * 1)Create a single Linked List
+ * 2)Remove Duplicate elements */
+import java.util.LinkedList;
+public class SRLL {
+	Node head;
+	class Node
+	{
+		int data;
+		Node link;
+		Node(int d) {data = d; link = null; }
+	}
+// Remove Duplicate 
+	void removeD()
+	{
+		Node cur = head;
+     	Node next_next;
+		if (head == null) 
+			return;
+		while (cur.link != null) {
+     		if (cur.data == cur.link.data) {
+				next_next = cur.link.link;
+				cur.link = null;
+				cur.link = next_next;
+			}
+			else 
+			cur = cur.link;
+		}
+	}					
+	public void add(int new_data)
+	{
+		Node new_node = new Node(new_data);
+		new_node.link = head;
+		head = new_node;
+	}
+	void printList()
+	{
+		Node t = head;
+		while (t != null)
+		{
+			System.out.print(t.data);
+			if (t.link != null)
+			{
+			System.out.print("->");
+			}
+			t = t.link;
+		} 
+	  System.out.println();
+	}
+	public static void main(String args[])
+	{
+		SRLL list = new SRLL();
+	//LinkedList
+		list.add(2);
+		list.add(2);
+		list.add(5);
+		list.add(6);
+		list.add(6);
+		list.add(7);
+		list.add(4);
+		list.add(10);
+		list.add(12);
+		list.printList();
+		list.removeD();
+		System.out.println("After removing duplicates from the list:");
+		list.printList(); 
+	}
+} 
