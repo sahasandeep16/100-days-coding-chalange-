@@ -1,0 +1,80 @@
+/*Question :
+ * 1) Create a linked list 
+ * 2) Insert Element 20,18,16,14,12,10,8,6,4,2;
+ * 3) Short in ascending order
+ * */
+public class ShortLinkedList {
+	class Node{  
+        int data;  
+        Node link;  
+           public Node(int data) {  
+            this.data = data;  
+            this.link = null;  	}  
+    }  
+    public Node first = null;  
+    public Node last = null;  
+      
+    //add node
+    public void add(int data) { 
+        Node newNode = new Node(data); 
+        //Checks list is empty or not  
+        if(first == null) { 
+            first = newNode;  
+            last = newNode;  
+        }  
+        else {   
+            last.link = newNode;  
+            last = newNode;  
+        }  
+ }
+    //sort List 
+    public void sortList() {  
+        Node cur = first, index = null;  
+        int temp;    
+        if(first == null) {  
+            return;  }  
+        else {  
+            while(cur != null) {
+                index = cur.link;
+                while(index != null) {  
+                    if(cur.data > index.data) {  
+                        temp = cur.data;  
+                        cur.data = index.data;  
+                        index.data = temp;  }  
+                    index = index.link;  }  
+                cur = cur.link;  
+            } }  
+ } 
+    //print
+    public void print() {  
+        Node cur = first;  
+        if(first == null) {  
+            System.out.println("List is empty");  
+            return;  
+        }  
+        while(cur != null) {
+            System.out.print(cur.data + "-->");  
+            cur = cur.link;  }  
+        System.out.println();  
+ } 
+    public static void main(String[] args) {  
+   ShortLinkedList List = new ShortLinkedList();  
+          //Adds list  
+        List.add(20);  
+        List.add(18);  
+        List.add(16);  
+        List.add(14);  
+        List.add(12); 
+        List.add(10);  
+        List.add(8);  
+        List.add(6);
+        List.add(4);  
+        List.add(2); 
+        System.out.println("The list: ");  
+        List.print();  
+         //Sorting
+        List.sortList();
+        System.out.println("The Sorted list: ");  
+        List.print();  
+    }  
+}  
