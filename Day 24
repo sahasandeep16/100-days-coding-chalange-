@@ -1,0 +1,55 @@
+/*Question:
+ * Create doubly linked , add elements and print it .
+ * */
+public class DoublyLL {
+	class Node{    
+		        Integer data;    
+		        Node prevLink;    
+		        Node nextLink;    
+		   public Node(Integer data) {    
+	            this.data = data;    
+		        }    
+	}  
+    Node first = null;  
+	    Node last = null;    	  
+	    //add list  
+		    public void addlist(Integer data) {    
+		    Node newNode = new Node(data);    
+		    	if(first == null) {  
+		            first = newNode;  
+		            last = newNode;  
+	            first.prevLink = null;      
+	            last.nextLink = null;    
+	        }  
+		        else {    
+	            last.nextLink = newNode;    
+		            newNode.prevLink = last;    
+		            last = newNode;      
+	            last.nextLink = null;    
+	        }    
+	    }
+		    //print   
+		    public void print() {   
+		        Node cur = first;      
+	        if(first == null) {  
+		            System.out.println("List is empty");    
+		            return;    
+	        }   
+	        System.out.println("Nodes of doubly linked list: ");    
+		        while(cur != null) {    
+		            System.out.print(cur.data + "<--> ");    
+		            cur = cur.nextLink; }    
+		    } 
+		    public static void main(String [] args) {    
+		  DoublyLL list = new DoublyLL();     
+	        list.addlist(15);    
+          list.addlist(16);    
+		      list.addlist(18);    
+	        list.addlist(10);    
+	        list.addlist(5);
+	        list.addlist(8);    
+	        list.addlist(9);    
+	        list.addlist(24);
+		    list.print();    
+		    }    
+}  
