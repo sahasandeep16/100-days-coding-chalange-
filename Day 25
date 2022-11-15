@@ -1,0 +1,72 @@
+/*Question : 1) Create a Doubly linked list
+ * 			 2) Find the minimum  and maximum element  
+ * */
+public class DoublyMinMax {
+	    class Node{  
+	        int data;  
+	        Node prevLink;  
+	        Node nextLinkLink;  
+	        public Node(int data) {  
+	            this.data = data;  
+	        }  
+	    }  
+	    Node first, last = null;
+	    //add list  
+	    public void add(int data) {  
+	        Node newNode = new Node(data);  
+	        if(first == null) { 
+	            first = last = newNode;  
+	            first.prevLink = null;  
+	            last.nextLinkLink = null;  
+	        }  
+	        else {
+	            last.nextLinkLink = newNode;
+	            newNode.prevLink = last;
+	            last = newNode; 
+	            last.nextLinkLink = null;  
+	        }  
+	    }  
+	    public int minNode() {  
+	        Node current = first;  
+	        int min;  
+	        if(first == null) {  
+	            System.out.println("List is empty");  
+	            return 0;  
+	        }  
+	        else {   
+	            min = first.data;  
+	            while(current != null) {
+	            	if(min > current.data)  
+	                    min = current.data;  
+	                current = current.nextLinkLink; }  
+	        }  
+	        return min;  
+	    }  
+	    public int maxNode() {
+	        Node current = first;  
+	        int max;
+	        if(first == null) {  
+	            System.out.println("List is empty");  
+	            return 0;}  
+	        else { 
+	            max = first.data;
+	            while(current != null) {  
+	                if(current.data > max)   
+	                    max = current.data;  
+	                current = current.nextLinkLink; }  
+	        }  
+	        return max;  
+	    }  
+	    public static void main(String[] args) {  
+	       DoublyMinMax list = new DoublyMinMax();  
+	        list.add(2);  
+	        list.add(4);
+	        list.add(6);  
+	        list.add(8);
+	        list.add(9);  
+	        list.add(10);  
+	        list.add(18);  
+	        System.out.println("Minimum node of the list: "+ list.minNode());  
+	        System.out.println("Maximum node of the list: "+ list.maxNode());  
+	    }  
+	}  
