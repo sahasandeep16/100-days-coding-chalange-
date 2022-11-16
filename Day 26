@@ -1,0 +1,76 @@
+/*Question : Create a Doubly Linked List , Insert element 1,2,3,4,5,6,7,8,9,10,
+ * Rotate it from node 5 ,  show the output .
+*/
+public class RotateDoublyLL { class Node{  
+	        int data;  
+	        Node prevLink;  
+	        Node next; 
+	        public Node(int data) {  
+	            this.data = data;  
+	        }  
+	    }  
+	    int size = 0; 
+	    Node first, last = null;
+	    // adding node 
+	    public void add(int data) { 
+	        Node newNode = new Node(data);
+	        if(first == null) {  
+	            first = last = newNode; 
+	            first.prevLink = null;  
+	            last.next = null;  
+	      }          else {  
+	            last.next = newNode;  
+	            newNode.prevLink = last;  
+	            last = newNode;  
+	            last.next = null;  
+	        }  
+	        size++;  
+	    }  
+	    public void rotateList(int n) {  
+	        Node current = first;  
+	        if(n == 0 || n >= size)   
+	            return;  
+	        else {  
+	            for(int i = 1; i < n; i++)   
+	                current = current.next;  
+	            last.next = first;  
+	            first = current.next;  
+	            first.prevLink = null;  
+	            last = current;  
+	            last.next = null;  
+	        }  
+	    }  
+	    //print
+	    public void print() {
+	        Node current = first;  
+	        if(first == null) {  
+	            System.out.println("List is empty");  
+	            return;  
+	        }  
+	        while(current != null) { 
+	        	System.out.print(current.data + "<--> ");  
+	            current = current.next;  
+	        }  
+	        System.out.println();  
+	    }        
+	    public static void main(String[] args) {            
+	    	RotateDoublyLL list = new RotateDoublyLL();  
+	        //Add nodes 
+	        list.add(1);  
+	        list.add(2);  
+	        list.add(3);  
+	        list.add(4);  
+	        list.add(5);
+	        list.add(6);  
+	        list.add(7);  
+	        list.add(8);  
+	        list.add(9);  
+	        list.add(10);
+	        System.out.println(" Doubly Linked List: ");  
+	        list.print();            
+	        list.rotateList(5);   
+	        System.out.println("Rotated  List: "); 
+	        list.print();  
+	    }  
+	}  
+
