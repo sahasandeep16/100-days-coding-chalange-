@@ -1,0 +1,56 @@
+/*Question : Create a Circular Linked list and print the data .
+ * */
+public class CircularLinkedList {
+	    public class Node{  
+	        int data;          Node next;  
+	        public Node(int data) {  
+	            this.data = data;  
+	        }  
+	    }  
+	    public Node first= null;  
+	    public Node last = null;  
+	  
+	    //add node.  
+	    public void add(int data){  
+	        //Create new node  
+	        Node newNode = new Node(data);  
+	        if(first== null) {  
+	            first= newNode;  
+	            last = newNode;  
+	            newNode.next = first;  
+	        }  
+	        else {  
+	            last.next = newNode;  
+	            last = newNode;   
+	            last.next = first;  
+	        }  
+	    }  
+	    public void print() {  
+	        Node cur = first;  
+	        if(first== null) {  
+	            System.out.println("List is empty");  
+	        }  
+	        else {  
+	            System.out.println("Nodes of the circular linked list: ");  
+	             do{  
+	                System.out.print(" "+ cur.data);  
+	                cur = cur.next;  
+	            }while(cur != first);  
+	            System.out.println();  
+	        }  
+	    }  
+	    public static void main(String[] args) {  
+	        CircularLinkedList list = new CircularLinkedList();
+	        list.add(3);  
+	        list.add(6);  
+	        list.add(9);  
+	        list.add(12);  
+	        list.add(15);  
+	        list.add(18);  
+	        list.add(21); 
+	        list.add(24);  
+	        list.add(27);  
+	        list.add(30); 
+	        list.print();  
+	    }  
+	}  
