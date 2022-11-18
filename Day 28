@@ -1,0 +1,104 @@
+/*Question : Create a Circular Linked List and delete the 2 first and 2 last  nodes from beginning. 
+ * */
+public class CircularLLDelete {
+	 public class Node{  
+	        int data;  
+	        Node next;  
+	        public Node(int data) {  
+	            this.data = data;  
+	        }  
+	    }    
+	    public Node first = null;  
+	    public Node	last = null;  
+	  
+	    //add list.  
+	    public void add(int data){  
+	        Node newNode = new Node(data);  
+	        if(first == null) {  
+	        	first = newNode;  
+	        	last = newNode;  
+	            newNode.next = first;  
+	        }  
+	        else {  
+	        	last.next = newNode;  
+	        	last = newNode;  
+	        	last.next = first;  
+	        }  
+	    }   
+	    //Deletes first of the list 
+	    public void deleteStart() {  
+	        if(first == null) {  
+	            return;  
+	        }  
+	        else {  
+	            if(first != last ) {  
+	            	first = first.next;  
+	            	last.next = first;  
+	            }  
+	            else {  
+	            	first = last = null;  
+	            }  
+	        }  
+	    }  
+	    //Deletes last of the list  
+	    public void deleteEnd() {  
+	        if(first == null) {  
+	            return;  
+	        }  
+	        else {  
+	            if(first != last ) {  
+	                Node current = first;  
+	                while(current.next != last) {  
+	                    current = current.next;  
+	                }  
+	                last = current;  
+	                last.next = first;  
+	            }  
+	            else {  
+	            	first = last = null;  
+	            }  
+	        }  
+	    }  
+	    //print 
+	    public void print() {  
+	        Node cur = first;  
+	        if(first == null) {  
+	            System.out.println("List is empty");  
+	        }  
+	        else {  
+	             do{  
+	                //Prints each node by incrementing pointer.  
+	                System.out.print(" "+ cur.data);  
+	                cur = cur.next;  
+	            }while(cur != first);  
+	            System.out.println();  
+	        }  
+	    }  
+	    public static void main(String[] args) {  
+	    	CircularLLDelete list = new CircularLLDelete();
+	    	list.add(1);  
+	    	list.add(2);  
+	    	list.add(3);  
+	    	list.add(4);
+	    	list.add(5);  
+	    	list.add(6);  
+	    	list.add(7);  
+	    	list.add(8);
+	        System.out.println("Original List: ");  
+	        list.print();
+	        System.out.println("List after deleting first: ");  
+	        list.deleteStart(); 
+	        list.print(); 
+	        System.out.println("List after deleting first: ");  
+	        list.deleteStart(); 
+	        list.print();  
+	        System.out.println("List after deleting last: ");
+	        list.deleteEnd();
+	        list.print();
+	        System.out.println("List after deleting last: ");
+	        list.deleteEnd();
+	        list.print();
+	        System.out.println("Final list ");
+	        list.print();
+	        }  
+	    }  
