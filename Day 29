@@ -1,0 +1,76 @@
+/*Question : Create Circular linked list and  add nodes at start and end of the List . 
+ *  */
+public class CircularAdd {
+public class Node{    
+         int data;    
+         Node next;    
+         public Node(int data) {    
+             this.data = data;    
+         }    
+     }  
+     public Node head = null;    
+     public Node tail = null; 
+     // add at the start of  list.  
+     public void addStart(int data){
+         Node newNode = new Node(data);  
+         if(head == null) {  
+             head = newNode;  
+             tail = newNode;  
+             newNode.next = head;  
+         }  
+         else {  
+             Node temp = head;   
+             newNode.next = temp;  
+             head = newNode;   
+             tail.next = head;  
+         }  
+     }  
+    //Add End 
+     public void addEnd(int data){ 
+         Node newNode = new Node(data); 
+         if(head == null) {       
+             head = newNode;    
+             tail = newNode;    
+             newNode.next = head;    
+         }    
+         else {    
+             tail.next = newNode;    
+             tail = newNode;      
+             tail.next = head;    
+         }    
+     }     
+   
+     
+     //print
+     public void print() {    
+         Node current = head;    
+         if(head == null) {    
+             System.out.println("List is empty");    
+         }    
+         else {   
+              do{    
+                 System.out.print(" "+ current.data);    
+                 current = current.next;    
+             }while(current != head);    
+             System.out.println();    
+         }    
+     }   
+     public static void main(String[] args) {    
+    	 CircularAdd list = new CircularAdd(); 
+    	 System.out.println("nodes of the list: ");  
+    	 list.addEnd(8);   
+         list.addEnd(9); 
+         list.addEnd(14);  
+         list.print(); 
+         list.addEnd(16);
+         System.out.println("Adding nodes to the end of the list: ");  
+         list.print();       
+         list.addEnd(18);    
+         list.print();   
+         System.out.println("Adding nodes to the Start of the list: ");  
+         list.addStart(2);    
+         list.print();   
+         list.addStart(1);    
+         list.print();   
+     }    
+}    
