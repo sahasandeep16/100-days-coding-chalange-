@@ -1,0 +1,39 @@
+//Question : Write a Code to Reverse a Stack List 
+import java.util.*;
+public class StackReverse {
+	public static void pushAtBottom(Stack<Integer> s, int data) {
+	        if(s.empty()) {
+	            s.push(data);
+	            return;
+	        }
+
+	        int temp = s.pop();
+	        pushAtBottom(s, data);
+	        s.push(temp);
+	    }
+		//Reversing 
+	    public static void reverse(Stack<Integer> s) {
+	        if(s.empty()) {
+	            return;
+	        }
+
+	        int top = s.pop();
+	        reverse(s);
+	        pushAtBottom(s, top);
+	    }
+
+	    public static void main(String args[]) {
+	        Stack<Integer> stack = new Stack<>();
+	        stack.push(1);
+	        stack.push(2);
+	        stack.push(3);
+	        stack.push(4);
+	        stack.push(5);
+	        stack.push(6);
+	        System.out.println("Stack List" +stack );
+	        System.out.println("Reversed Stack List");
+	        while(!stack.empty()) {
+	            System.out.println(stack.pop());
+	        }
+	    }
+	}
