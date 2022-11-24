@@ -1,0 +1,88 @@
+//  Question :Queue  Implementation using  Array  .
+public class Queue {
+	
+	  int size = 5;
+	  int item[] = new int[size];
+	  int front, rear;
+
+	  Queue() {
+	    front = -1;
+	    rear = -1;
+	  }
+
+	  boolean isFull() {
+	    if (front == 0 && rear == size - 1) {
+	      return true;
+	    }
+	    return false;
+	  }
+
+	  boolean empty() {
+	    if (front == -1)
+	      return true;
+	    else
+	      return false;
+	  }
+
+	  void inputQ(int element) {
+	    if (isFull()) {
+	      System.out.println("Queue is full");
+	    } else {
+	      if (front == -1)
+	        front = 0;
+	      rear++;
+	      item[rear] = element;
+	      System.out.println("Inserted " + element);
+	    }
+	  }
+
+	  int deleteQueue() {
+	    int element;
+	    if (empty()) {
+	      System.out.println("Queue is empty");
+	      return (-1);
+	    } else {
+	      element = item[front];
+	      if (front >= rear) {
+	        front = -1;
+	        rear = -1;
+	      } /* Q has only one element, so we reset the queue after deleting it. */
+	      else {
+	        front++;
+	      }
+	      System.out.println("Deleted -> " + element);
+	      return (element);
+	    }
+	  }
+
+	  void print() {
+	    /* Function to display elements of Queue */
+	    int i;
+	    if (empty()) {
+	      System.out.println("Empty Queue");
+	    } else {
+	      System.out.println("\nFront Element-> " + front);
+	      System.out.println("Items -> ");
+	      for (i = front; i <= rear; i++)
+	        System.out.print(item[i] + "  ");
+
+	      System.out.println("\nRear Element -> " + rear);
+	    }
+	  }
+	  public static void main(String[] args) {
+	    Queue q = new Queue();
+	    q.inputQ(1);
+	    q.inputQ(2);
+	    q.inputQ(3);
+	    q.inputQ(4);
+	    q.inputQ(5);
+	    q.inputQ(6);
+	    //Displaying Queue
+	    q.print();
+	    //removes element entered first
+	    q.deleteQueue();
+	    q.print();
+
+	  }
+	}
+
