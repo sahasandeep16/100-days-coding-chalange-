@@ -1,0 +1,63 @@
+//Question : Create Queue using Linked List.
+public class QueueLinkedList {
+	static class Node {
+	       int data;
+	       Node link;
+	       Node(int data) {
+	           this.data = data;
+	           link = null;
+	       }
+	   }
+	   static class Queue {
+	       static Node head = null;
+	       static Node tail = null;
+	 
+	       public static boolean empty() {
+	           return head == null && tail == null;
+	       }
+	 
+	       public static void add(int data) {
+	           Node newNode = new Node(data);
+	           if(empty()) {
+	               tail = head = newNode;
+	           } else {
+	               tail.link = newNode;
+	               tail = newNode;
+	           }
+	       }
+	 
+	       public static int remove() {
+	           if(empty()) {
+	               System.out.println("empty queue");
+	               return -1;
+	           }
+	           int front = head.data;
+	           if(head == tail) {
+	               tail = null;
+	           }
+	           head = head.link;
+	           return front;
+	       }
+	       public static int peek() {
+	           if(empty()) {
+	               System.out.println("empty queue");
+	               return -1;
+	           }
+	           return head.data;
+	       }
+	   }
+	   public static void main(String args[]) {
+	       Queue q = new Queue();
+	       q.add(10);
+	       q.add(20);
+	       q.add(30);
+	       q.add(40);
+	       q.add(50);
+	       System.out.println("This is Queue using Linked List ");
+	       while(!q.empty()) {
+	           System.out.println("Element "+q.peek());
+	           q.remove();
+	           
+	       }
+	   }
+	}
