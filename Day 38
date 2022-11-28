@@ -1,0 +1,43 @@
+// Question : Create Queue and  reverse the  Queue List.
+import java.util.LinkedList; 
+import java.util.Queue; 
+import java.util.Stack; 
+public class ReverseQueue {
+    private static void reverseQueue(Queue<Integer> queue) {
+        int n = queue.size();
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            int curr = queue.poll();
+            stack.push(curr);
+        }
+        for (int i = 0; i < n; i++) {
+            int curr = stack.pop();
+            queue.add(curr);
+        }
+        // reverse  queue
+        for (Integer i : queue) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Queue<Integer> q1 = new LinkedList<>();
+        q1.add(10);
+        q1.add(8);
+        q1.add(4);
+        q1.add(23);
+        System.out.println("First Queue "+q1);
+        System.out.println("Reversed  First  Queue");
+        reverseQueue(q1);
+        Queue<Integer> q2 = new LinkedList<>();
+        q2.add(11);
+        q2.add(98);
+        q2.add(31);
+        q2.add(42);
+        q2.add(73);
+        q2.add(6);
+        
+        System.out.println("Secend Queue"+q2);
+        System.out.println("Reversed Secend Queue");
+        reverseQueue(q2);
+    }}
