@@ -37,7 +37,7 @@ public class ReverseQueue {
         q2.add(73);
         q2.add(6);
         
-        System.out.println("Secend Queue"+q2);
-        System.out.println("Reversed Secend Queue");
+        System.out.println("Second Queue"+q2);
+        System.out.println("Reversed Second Queue");
         reverseQueue(q2);
     }}
