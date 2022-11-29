@@ -1,0 +1,42 @@
+// Question : Try the implementation of HashMap.
+import java.util.*;
+public class TryHashMap {
+	   public static void main(String args[]) {
+
+	       System.out.println("This is a Hash map  ");
+	       //Creation
+	       HashMap<String, Integer> map = new HashMap<>();
+	       //Insertion
+	       System.out.println("Populaton of Countries ");
+	       
+	       map.put("US", 33);
+	       map.put("Russia", 14);
+	       map.put("China", 150);
+	       map.put("India", 139);
+	       map.put("Japan", 12);
+	       map.put("South Koria", 5);
+	       map.put("France", 6);
+	       map.put("United Kingdome", 6);
+	       map.put("Canada",3);
+	       map.put("Brazil", 21);
+	 
+	       System.out.println(map);
+	 
+	       
+	       //Searching
+	       System.out.println("Please enter the Country name you wana search ");
+	       
+	       Scanner in = new Scanner(System.in);
+	       String a = in.nextLine();
+	       
+	       if(map.containsKey(a)) {
+	           System.out.println("key is present in the map");
+	       } else {
+	           System.out.println("key is not present in the map");
+	       }
+	 
+	       System.out.println("The Value of "+a + " is "+map.get(a) +" Crore"); //key exists
+	 
+	       
+	   }
+	}
