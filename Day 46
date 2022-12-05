@@ -1,0 +1,17 @@
+//Question :  Try Thread  using the Thread Class: Thread(Runnable r, String name)
+public class TryThread implements Runnable  {     
+	public void run()  
+	{    
+	System.out.println("Thread Starts to Execute ");    
+	}    
+	    
+	// main method  
+	public static void main(String argvs[])  
+	{   
+	Runnable r1 = new TryThread();   
+	Thread th1 = new Thread(r1, "This is my  new thread");    
+	th1.start();   
+	String str = th1.getName();  
+	System.out.println(str);  
+	}    
+	}    
