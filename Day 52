@@ -1,0 +1,16 @@
+//Question: WAP on Thread Priority .
+import java.lang.*;
+public class Tpriority extends Thread {
+
+	public void run()  
+	{  
+	System.out.println("Inside the run() method");  
+	}  
+	public static void main(String argvs[])  
+	{  
+	Thread.currentThread().setPriority(7);  
+	System.out.println("Priority of thread is : " + Thread.currentThread().getPriority());  
+	Tpriority th1 = new Tpriority();  
+	System.out.println("Priority of thread th1 is : " + th1.getPriority());  
+	}  
+	}  
