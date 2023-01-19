@@ -1,0 +1,23 @@
+//Question: Trying to Throwing User-defined Exception.
+class TryThrow1 extends Exception  
+{ 
+	    public TryThrow1(String str)  
+	    {  
+	        super(str);  
+	    }  
+	}  
+	public class TryThrow 
+	{  
+	    public static void main(String args[])  
+	    {  
+	        try  
+	        {  
+	            throw new TryThrow1("This is user-defined exception");  
+	        }  
+	        catch (TryThrow1 ude)  
+	        {  
+	            System.out.println("Caught the exception");  
+	            System.out.println(ude.getMessage());  
+	        }  
+	    }     
+}
