@@ -1,0 +1,22 @@
+//Question : Try Exception Handling with method overloading .
+import java.io.*; 
+class Parent{    
+	  void run()throws Exception {  
+	    System.out.println("parent method");  
+	  }    
+	}    
+
+public class ExecptionOverloading extends Parent {
+	  void run()throws ArithmeticException {  
+		    System.out.println("child method is running ");  
+}
+	  public static void main(String args[]){    
+		   Parent p = new ExecptionOverloading();    
+		     
+		   try {    
+		   p.run();    
+		   }  
+		   catch(Exception e) {}    
+		  }      
+}
+
