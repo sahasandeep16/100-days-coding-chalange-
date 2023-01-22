@@ -1,0 +1,22 @@
+//Question : WAP TO Calculate a profit and loss of a Transaction:
+import java.util.*; 
+public class TryCd {
+	public static void main(String args[]){
+		int cprice, sprice, plant;
+		System.out.println("Check Profit and loss of a Transaction ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter cost price");
+		cprice=sc.nextInt();
+		System.out.println("Enter selling price");
+		 sprice= sc.nextInt();
+		if(sprice>cprice){
+		plant = sprice=cprice;
+		System.out.println("profit amount: "+ plant);}
+		else if(cprice > sprice)
+		{
+		plant = cprice-sprice; 
+		System.out.println("loss amount"+plant);}
+		else {
+		System.out.println("You are running in no profit no loss condition");
+		}
+		}}
