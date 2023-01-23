@@ -1,0 +1,21 @@
+/*Write a program to print the pyramid pattern given below.
+ * Input any number 
+ * Output:
+ * The output prints the pattern.*/
+import java.util.*;
+public class TryPatern {
+public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any value to print the patern ");
+		int n =  sc.nextInt();
+		System.out.println("The patern ");
+		for (int i=1;i<=n;i++) {
+			for (int j=n;j>-i;j--) {
+				System.out.print(" ");
+			}
+			for (int k =1;k<=i;k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+	}
+	}}
