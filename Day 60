@@ -1,0 +1,25 @@
+// Question : Try GCD concept .
+import java.util.Scanner;
+public class GCD {
+	public static void main (String [] args ) {
+		TryGCD  ob = new TryGCD();
+		ob.concept();			
+	}
+}
+class TryGCD
+{
+	public static void concept() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the first number ");
+		int a = in.nextInt();
+		System.out.println("Enter the second number ");
+		int b = in.nextInt();
+		int fv = 1;
+		  for(int i = 1; i <= a && i <= b; i++)  
+	       {  
+	       if(a%i==0 && b%i==0)  
+	       fv = i;  
+	       }   
+	       System.out.printf("GCD of"+ a +" and "+b +"is :"+ fv );
+	}
+	}
