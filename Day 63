@@ -1,0 +1,20 @@
+//Question: WAP to write a table of any number.
+import java.util.Scanner; 
+public class Table {
+	public static void main (String []args )
+	{
+		TT yes = new TT();
+		yes.maths();
+	}
+}
+class TT{
+	public static void maths(){
+	Scanner in = new Scanner(System.in);
+	System.out.println("Enter no of table");
+	int num = in.nextInt();	
+	for (int i =1; i <=10; i++) {
+	int t = num *i;
+	System.out.println(num +" * "+i+" = "+t);
+	}
+}
+}
