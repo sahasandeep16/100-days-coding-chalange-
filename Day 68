@@ -1,0 +1,39 @@
+/*Question: WAP to figure out a way to get both kangaroos at the same location at the same time as part of the show. 
+ * If it is possible, return YES, otherwise return NO.
+ * The two kangaroos jump through the following sequence of locations
+
+Sample Input 0
+0 3 4 2
+
+Sample Output 0
+YES
+
+Explanation 0*/
+
+
+import java.util.*;
+public class NumberLineJump {
+	  public static void main(String[] args)
+	    {
+		  Scanner sc = new Scanner(System.in);
+		  System.out.println("Location of Kangaroo 1");
+	        int x1=sc.nextInt();
+	        System.out.println("Rate of Kangaroo 1 per Jump (Distance of each jump ) ");
+	         int v1=sc.nextInt();
+	         System.out.println("Location of Kangaroo 2");
+	          int x2=sc.nextInt();
+		        System.out.println("Rate of Kangaroo 2 per Jump (Distance of each jump ) ");
+	           int v2=sc.nextInt();
+	           int i=0;
+	       for(i=0;i<10000;i++)
+	       {
+	           x1=x1+v1;
+	           x2=x2+v2;
+	           if(x1==x2){
+	           System.out.print("YES");
+	             System.exit(0);}
+	       }
+	       System.out.print("NO");
+	}
+
+}
