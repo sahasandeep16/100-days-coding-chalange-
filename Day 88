@@ -1,0 +1,25 @@
+//Question : WAP A PROGRAM FOR ELURE PHI
+import java.util.Scanner;
+public class EulerPhi {
+		static int elure(int a, int b)
+		{
+			if (a==0)
+				return b;
+			return elure(b%a,a);
+		}
+		static int phi(int n)
+		{
+			int result = 1;
+			for (int i = 2; i < n; i++)
+				if (elure(i, n) == 1)
+					result++;
+			return result;
+		}
+		public static void main(String[] args)
+		{
+			int n;
+
+			for (n = 1; n <= 10; n++)
+				System.out.println("ElurePhi(" + n + ") = " + phi(n));
+		}
+	}
