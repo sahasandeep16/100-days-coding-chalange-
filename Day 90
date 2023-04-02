@@ -1,0 +1,78 @@
+// Question - WAP a java program for K-menas program 
+public class Kmeans {
+ public static void main(String[] args) {
+        
+        double[][] data = { { 1.0, 2.0 }, { 2.0, 1.0 }, { 3.0, 4.0 }, { 5.0, 7.0 }, { 6.0, 8.0 }, { 7.0, 9.0 } };
+        int k = 2; // Number of clusters
+        
+        double[][] centroids = initializeCentroids(data, k); // Initialize centroids
+        
+        int[] clusterAssignments = assignClusters(data, centroids); // Assign data points to clusters
+        
+        for (int i = 0; i < 10; i++) { // Perform 10 iterations
+            centroids = updateCentroids(data, clusterAssignments, k); // Update centroids
+            clusterAssignments = assignClusters(data, centroids); // Assign data points to clusters
+        }
+        
+        // Print final cluster assignments
+        for (int i = 0; i < data.length; i++) {
+            System.out.println("Data point " + i + " belongs to cluster " + "K"+(clusterAssignments[i]+1));
+        }
+        
+    }
+    
+    // Initialize centroids randomly
+    public static double[][] initializeCentroids(double[][] data, int k) {
+        double[][] centroids = new double[k][data[0].length];
+        for (int i = 0; i < k; i++) {
+            int randomIndex = (int) (Math.random() * data.length);
+            centroids[i] = data[randomIndex];
+        }
+        return centroids;
+    }
+    
+    // Assign data points to nearest centroid
+    public static int[] assignClusters(double[][] data, double[][] centroids) {
+        int[] clusterAssignments = new int[data.length];
+        for (int i = 0; i < data.length; i++) {
+            double minDistance = Double.MAX_VALUE;
+            for (int j = 0; j < centroids.length; j++) {
+                double distance = euclideanDistance(data[i], centroids[j]);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    clusterAssignments[i] = j;
+                }
+            }
+        }
+        return clusterAssignments;
+    }
+    
+    // Update centroids based on mean of assigned data points
+    public static double[][] updateCentroids(double[][] data, int[] clusterAssignments, int k) {
+        double[][] centroids = new double[k][data[0].length];
+        int[] clusterSizes = new int[k];
+        for (int i = 0; i < data.length; i++) {
+            int cluster = clusterAssignments[i];
+            for (int j = 0; j < data[i].length; j++) {
+                centroids[cluster][j] += data[i][j];
+            }
+            clusterSizes[cluster]++;
+        }
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < centroids[i].length; j++) {
+                centroids[i][j] /= clusterSizes[i];
+            }
+        }
+        return centroids;
+    }
+    // Calculate Euclidean distance between two data points
+    public static double euclideanDistance(double[] point1, double[] point2) {
+        double distance = 0.0;
+        for (int i = 0; i < point1.length; i++) {
+            distance += Math.pow(point1[i] - point2[i], 2);
+        }
+        return Math.sqrt(distance);
+    }
+    
+}
+
