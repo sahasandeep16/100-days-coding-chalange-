@@ -1,0 +1,31 @@
+// Question - WAP a java program for ConfusionMatrix
+public class ConfusionMatrix {
+	   public static void main(String[] args) {
+	        
+	        // Construct confusion matrix
+	        int truePositives = 620;
+	        int falsePositives = 180;
+	        int falseNegatives = 380;
+	        int trueNegatives = 8820;
+	        
+	        // Compute precision, recall, and accuracy
+	        double precision = (double) truePositives / (truePositives + falsePositives);
+	        double recall = (double) truePositives / (truePositives + falseNegatives);
+	        double accuracy = (double) (truePositives + trueNegatives) / (truePositives + trueNegatives + falsePositives + falseNegatives);
+	        
+	        // Print results
+	        System.out.println("Confusion Matrix:");
+	        System.out.println("------------------");
+	        System.out.println("|   |  Actual  |  ");
+	        System.out.println("|   | Sick  | Healthy |");
+	        System.out.println("|----------------|");
+	        System.out.println("|Pos|  " + truePositives + "  |  " + falsePositives + "  |");
+	        System.out.println("|----------------|");
+	        System.out.println("|Neg|  " + falseNegatives + "  |  " + trueNegatives + "  |");
+	        System.out.println("------------------");
+	        System.out.println("Precision: " + precision);
+	        System.out.println("Recall: " + recall);
+	        System.out.println("Accuracy: " + accuracy);
+	        
+	    }
+}
